@@ -1,0 +1,142 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Manrope", system-ui, -apple-system, sans-serif;
+
+  --color-warm-cream: #F3EBDD;
+  --color-ivory: #FAF6EE;
+  --color-sand: #D9CBB6;
+  --color-deep-olive: #303D24;
+  --color-muted-olive: #687158;
+  --color-coral: #ED704D;
+  --color-coral-hover: #dc5f3c;
+  --color-dark-text: #24271D;
+}
+
+@layer base {
+  *, ::before, ::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  body {
+    background-color: var(--color-ivory);
+    color: var(--color-dark-text);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    letter-spacing: -0.01em;
+  }
+}
+
+/* Plaster and subtle stone texture backdrop */
+.plaster-texture {
+  background-color: #FAF6EE;
+  background-image: linear-gradient(180deg, #FAF6EE 0%, #F5EDE1 100%);
+}
+
+
+/* Organic curved frames inspired by the reference */
+.organic-mask-1 {
+  border-radius: 42% 58% 68% 32% / 38% 46% 54% 62%;
+}
+
+.organic-mask-2 {
+  border-radius: 54% 46% 40% 60% / 48% 62% 38% 52%;
+}
+
+.organic-mask-3 {
+  border-radius: 48% 52% 58% 42% / 62% 38% 62% 38%;
+}
+
+.organic-mask-oval {
+  border-radius: 45% 55% 50% 50% / 50% 50% 50% 50%;
+}
+
+/* Layered Travertine and Cream Platform Depth */
+.travertine-shadow {
+  box-shadow: 
+    0 10px 30px -5px rgba(48, 61, 36, 0.08),
+    0 4px 12px -2px rgba(48, 61, 36, 0.05),
+    inset 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.travertine-rim {
+  box-shadow: 
+    0 0 0 10px #FAF6EE,
+    0 0 0 14px #E7DEC9,
+    0 25px 45px -10px rgba(48, 61, 36, 0.16);
+}
+
+.travertine-rim-thick {
+  box-shadow: 
+    0 0 0 14px #FAF6EE,
+    0 0 0 18px #E2D7C2,
+    0 30px 60px -15px rgba(48, 61, 36, 0.2);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F3EBDD;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #687158;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #303D24;
+}
+
+/* Mobile & iPad / Tablet Responsive Adaptation */
+@media (max-width: 1040px), (orientation: portrait) {
+  .hero-desktop-bg { display: none !important; }
+  .hero-mobile-bg { display: block !important; }
+  .hero-desktop-buttons { display: none !important; }
+  .hero-desktop-tagline { display: none !important; }
+  .hero-mobile-buttons { display: flex !important; }
+  .header-desktop-nav { display: none !important; }
+  .header-mobile-toggle { display: block !important; }
+}
+
+@media (min-width: 1041px) and (orientation: landscape) {
+  .hero-desktop-bg { display: block !important; }
+  .hero-mobile-bg { display: none !important; }
+  .hero-desktop-buttons { display: flex !important; }
+  .hero-desktop-tagline { display: flex !important; }
+  .hero-mobile-buttons { display: none !important; }
+  .header-desktop-nav { display: flex !important; }
+  .header-mobile-toggle { display: none !important; }
+}
+
+/* Mobile Hero Buttons: skin color with crisp thin dark green boundary */
+.hero-mobile-action-btn {
+  background-color: #EFD0BB !important;
+  color: #24271D !important;
+  border: 1px solid #303D24 !important;
+  box-shadow: 0 4px 14px -2px rgba(48, 61, 36, 0.25);
+  transition: all 0.2s ease;
+}
+
+.hero-mobile-action-btn:active {
+  background-color: #dfbeaa !important;
+  transform: scale(0.98);
+}
+
